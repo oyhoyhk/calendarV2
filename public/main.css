@@ -1,0 +1,162 @@
+.profile-wrap {
+  width: 30%;
+  padding: 15px;
+  padding-left: 30px;
+}
+
+.input-group {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.btn {
+  border: none;
+  text-decoration: none;
+  color: black;
+  background: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  display: inline-block;
+  margin: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#month {
+  font-size: 3rem;
+  font-weight: bold;
+  width: 30%;
+  text-align: center;
+}
+
+#date {
+  font-size: 2rem;
+  width: 30%;
+  text-align: right;
+  cursor: pointer;
+}
+
+table {
+  width: 80%;
+  height: 80vh;
+  margin: 30px auto;
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+table th,
+td {
+  width: 13%;
+}
+
+table th {
+  height: 50px;
+  border: 1px solid black;
+}
+
+table td {
+  position: relative;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.day {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  font-size: 1.5rem;
+}
+
+.prevMonth,
+.nextMonth {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+#prev {
+  position: absolute;
+  left: 3%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border-left: 5px solid black;
+  border-bottom: 5px solid black;
+  transform-origin: center center;
+  transform: rotateZ(45deg);
+  cursor: pointer;
+}
+
+#next {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border-right: 5px solid black;
+  border-bottom: 5px solid black;
+  transform-origin: center center;
+  transform: rotateZ(-45deg);
+  cursor: pointer;
+}
+
+#signIn {
+  width: 80%;
+  height: 70vh;
+  margin: 50px auto;
+  border: 1px solid black;
+}
+
+#joinInfo {
+  width: 50%;
+  height: 90%;
+  border: 1px solid black;
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.joinInput {
+  width: 70%;
+  height: 15%;
+  font-size: 1.4rem;
+}
+
+.joinInput label {
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.joinInput input {
+  font-size: 1.4rem;
+  width: 60%;
+}
+
+#joinBtn {
+  width: 70%;
+  border: none;
+  outline: none;
+  background: black;
+  height: 15%;
+  color: white;
+  font-size: 1.5rem;
+}

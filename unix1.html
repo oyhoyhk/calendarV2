@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    section {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    h2,
+    h3,
+    h4 {
+      margin-top: 50px;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    .th {
+      width: 100px;
+      background: #55ccff;
+      text-align: center;
+      border: 1px solid black;
+    }
+
+    .tl {
+      width: 100px;
+      text-align: center;
+      font-weight: bold;
+      border: 1px solid black;
+      background: #aaddff
+    }
+
+    .tl2 {
+      width: 200px;
+      text-align: left;
+      font-weight: bold;
+      border: 1px solid black;
+      background: #aaddff;
+      padding-left: 15px;
+    }
+
+    .tr {
+      width: 700px;
+      text-align: left;
+      border: 1px solid black;
+    }
+
+    .td {
+      width: 700px;
+      text-align: left;
+      border: 1px solid black;
+      padding: 15px 0 15px 20px;
+    }
+
+    .td1 {
+      width: 350px;
+      text-align: left;
+      border: 1px solid black;
+      padding: 15px 15px 15px 15px;
+    }
+
+    .td3 {
+      text-align: left;
+      border: 1px solid black;
+      padding: 15px 0 15px 20px;
+    }
+
+    .tl1 {
+      border: 1px solid black;
+      text-align: left;
+      padding-left: 30px;
+      width: 180px
+    }
+
+    .td2 {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h1>7강 / 프로그램 개발</h1>
+    <div style="font-size: 1.3rem; float: right;">20100008 - 오윤환</div>
+    <h2>학습목표</h2>
+    <ol>
+      <li><a href="#first">유닉스에서 c 프로그램 개발을 할 수 있다.</a></li>
+      <li>
+        <a href="#second">make 유틸리티 사용 방법을 이해할 수 있다.</a>
+      </li>
+    </ol>
+    <h3 id="first">C 컴파일러 - cc / gcc</h3>
+    <h4>실행파일 생성과정</h4>
+    <ul>
+      <li>전처리 단계 - 전처리기(cpp)</li>
+      <ul>
+        <li>#include, #define, #ifdef 등 #으로 시작하는 문법 사항이 적절히 전처리된 C언어 소스파일이 만들어짐</li>
+      </ul>
+      <li>컴파일 단계 - 컴파일러(cc1)</li>
+      <ul>
+        <li>C 언어 소스 파일은 컴파일 과정을 거쳐 어셈블리(Assembly) 소스 파일이 됨</li>
+      </ul>
+      <li>어셈블 단계 - 어셈블러(as)</li>
+      <ul>
+        <li>어셈블러 소스 파일은 어셈블 과정을 거쳐 목적(Object) 파일이 됨</li>
+      </ul>
+      <li>
+        링크 단계 - 링커(Id)
+      </li>
+      <ul>
+        <li>목적 코드(Object Code)는 라이브러리와 링크되어서 실행 가능(Executable)한 파일이 됨.</li>
+      </ul>
+    </ul>
+    <h4>gcc 컴파일 옵션</h4>
+    <table style="margin-left:30px;">
+      <thead>
+        <tr>
+          <th class="th">옵션</th>
+          <th class="th">설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tl">-o</td>
+          <td class="td">
+            <ul>
+              <li>컴파일 결과로 생성되는 파일의 이름을 명시적으로 지정함.</li>
+              <li>-o 옵션 뒤에 파일명을 지정함.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="tl">-c</td>
+          <td class="td">
+            <ul>
+              <li>목적(Object) 파일을 생성함.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="tl">-I</td>
+          <td class="td">
+            <ul>
+              <li>헤더 파일의 디렉토리 위치를 명시적으로 지정함(i의 대문자)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="tl">-l</td>
+          <td class="td">
+            <ul>
+              <li>컴파일에 사용되는 라이브러리를 명시적으로 지정함.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="tl">-L</td>
+          <td class="td">
+            <ul>
+              <li>라이브러리의 디렉토리 위치를 명시적으로 지정함.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="tl">-D</td>
+          <td class="td">
+            <ul>
+              <li>매크로를 지정함.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="second">컴파일 유틸리티 - make</h3>
+    <h4>Makefile의 구조</h4>
+    <ul>
+      <li>구조 : Target - Dependency List (Tab) Command List</li>
+      <li>특징</li>
+      <ul>
+        <li>
+          MakeFile : make 유틸리티의 컴파일 수행 규칙을 나열한 참조 파일
+        </li>
+        <li>Target : 생성할 결과</li>
+        <li>Dependency List : Target을 만드는데 관련이 있는 파일들의 목록</li>
+        <li>Command List : Target을 만들기 위해 사용될 명령어 목록</li>
+      </ul>
+    </ul>
+    <h4>make 유틸리티 정리</h4>
+    <ul>
+      <li>일정한 규칙을 지정하여 타겟파일을 만들어낼 수 있다.</li>
+      <li>컴파일 명령어 처리를 쉽게 해주며 소스 모듈의 일부를 수정했을 때에도 전체적으로 일관성을 유지하도록 해준다.</li>
+    </ul>
+  </section>
+</body>
+
+</html>

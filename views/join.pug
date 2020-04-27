@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    section#signIn
+        form#joinInfo(action="/auth/join/" method="post")
+            .joinInput
+                label(name="joinEmail") E-mail
+                input#joinEmail(type="email" name="joinEmail" required autofocus)
+            .joinInput
+                label(name="joinNick") Nickname
+                input#joinNick(name="joinNick" required)
+            .joinInput
+                label(name="joinPassword required") Password
+                input#joinPassword(name="joinPassword" type="password")
+            button#joinBtn(type="submit") Sign In
+    script.
+        const center=document.getElementById('month');
+        center.textContent="회원가입";
+        const right=document.getElementById('date');
+        right.textContent="처음으로";
+        right.addEventListener('click',()=>{
+            window.location.href="http://localhost:3000"
+        })

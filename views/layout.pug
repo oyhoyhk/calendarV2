@@ -1,0 +1,34 @@
+doctype
+html
+    head
+        meta(charset='UTF-8')
+        title= title
+        meta(name='viewport' content='width=device-width, user-scalable=no')
+        meta(http-equiv='X-UA-Compatible' content="IE=edge")
+        link(rel='stylesheet' href="/main.css")
+    body
+        header
+            .profile-wrap
+                .profile
+                    if user && user.id
+                        .user-name= '안녕하세요! ' + user.nick + '님'
+                        .todos
+                            div 이 달의 할일
+                            .count 0개
+                        #logout Log Out
+                    else
+                        form#login-form(action='/auth/login' method='post')
+                            .input-group
+                                label(for='email') 이메일&nbsp&nbsp&nbsp&nbsp
+                                input#email(type='email' name='email' required autofocus)
+                            .input-group
+                                label(for='password') 비밀번호&nbsp
+                                input#password(type='password' name='password' required)
+                            if loginError
+                                .error-message= loginError
+                            a#join.btn(href="/join") 회원가입
+                            button#login.btn(type='submit') 로그인
+                            a#kakao.btn(href='/auth/kakao') 카카오톡
+            #month 4월
+            #date 2020년 4월 22일
+        block content

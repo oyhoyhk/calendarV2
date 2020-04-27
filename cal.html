@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body>
+    <header>
+      <form action="/auth/join" class="login" method="post">
+        <div class="input-group">
+          <label for="email">E-Mail</label>
+          <input type="email" required autofocus name="email" />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" class="password" name="password" required />
+        </div>
+        <a id="join" href="/join">회원가입</a>
+        <button type="submit">로그인</button>
+        <a href="/auth/kakao" id="kakao">카카오톡</a>
+      </form>
+      <div id="month">4월</div>
+      <div id="date">2020년 4월 22일</div>
+    </header>
+
+    <div id="prev"></div>
+    <div id="next"></div>
+    <table id="calendar">
+      <thead>
+        <tr>
+          <th style="color: red;">Sun</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th style="color: blue;">Sat</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="test.js"></script>
+  </body>
+</html>
